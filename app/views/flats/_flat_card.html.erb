@@ -1,0 +1,20 @@
+<div class="card w-100" style="width: 18rem;">
+  <img src="<%= flat.img_url %>" class="card-img-top" alt="<%= flat.name %>">
+  <div class="card-body bg-light">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <p class="card-text"><%= flat.address %></p>
+    <span class="me-2">
+      <i class="fa-solid fa-people-line"></i>
+      <%= flat.number_of_guests %>
+      </span>
+    <span>
+      <i class="fa-solid fa-euro-sign"></i>
+      <%= flat.price_per_night %>
+    </span>
+  </div>
+  <div class="card-footer border-top">
+    <%= link_to "More info", flat_path(flat), class: "card-link text-primary" %>
+    <%= link_to "Edit", edit_flat_path(flat), class: "card-link text-warning" %>
+    <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure, you want to delete #{flat.name}" }, class: "card-link text-danger" %>
+  </div>
+</div>

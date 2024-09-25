@@ -1,0 +1,10 @@
+<div class="container mt-3">
+  <h1>All our flats(<%= @flats.length %>)</h1>
+  <div class="row g-4 mt-2">
+    <% @flats.each do |flat| %>
+      <div class="col-4">
+        <%= render "flat_card", flat: flat %>
+      </div>
+    <% end %>
+  </div>
+</div>
